@@ -1,8 +1,22 @@
-.window.maximized {
-    width: 100% !important;
-    height: 100% !important;
+.window {
+    &.maximized {
+        width: 100% !important;
+        height: 100% !important;
+
+        & .window-body {
+            width: calc(initial + 5%);
+            height: 96.5%;
+
+            & iframe {
+                width: 100%;
+                height: 100%;
+                border: none;
+            }
+        }
+    }
 }
 
-.window:not(.react-draggable-dragged), .window.maximized {
+.window:not(.react-draggable-dragged),
+.window.maximized {
     transform: none !important;
 }
