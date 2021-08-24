@@ -6,7 +6,6 @@ import "./Window.scss";
 export default function Window(props) {
     const [maximized, setMaximize] = useState(false);
     const titlebar = useRef();
-    const rhClasse = "resizeHandler" + (maximized ? " max" : "");
     useDoubleClick({
         onDoubleClick: (e) => {
             setMaximize(!maximized);
@@ -20,16 +19,6 @@ export default function Window(props) {
                 dragHandleClassName="title-bar"
                 enableResizing={!maximized}
                 disableDragging={maximized}
-                resizeHandleClasses={{
-                    bottom: rhClasse,
-                    bottomLeft: rhClasse,
-                    bottomRight: rhClasse,
-                    left: rhClasse,
-                    right: rhClasse,
-                    top: rhClasse,
-                    topLeft: rhClasse,
-                    topRight: rhClasse,
-                }}
                 minWidth={250}
                 minHeight={150}
             >
